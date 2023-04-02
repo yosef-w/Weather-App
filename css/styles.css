@@ -8,13 +8,17 @@
 
 body {
     background-color: hsl(240, 3%, 83%);
+    background-image: url('../images/am-clear-sky.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 body .card {
     border: none;
     max-width: 480px;
     background: linear-gradient(330deg, #09203F, #537895);
-    margin: 100px auto;
+    margin: 200px auto;
     border-radius: 20px;
     padding: 50px;
     display: flex;
@@ -94,6 +98,7 @@ body label, i {
 .sub1 img {
     width: 60px;
     height: auto;
+    margin-right: 15px
 }
 
 .sub2 img {
@@ -102,7 +107,6 @@ body label, i {
 }
 
 .details {
-    padding-left: 15px;
     font-family:'Times New Roman', Times, serif
 }
 
@@ -111,7 +115,7 @@ body label, i {
 }
 
 .details h4 {
-    font-size: 30px;
+    font-size: 40px;
 }
 
   
