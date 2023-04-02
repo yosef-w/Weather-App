@@ -1,12 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
-    /* font-family: 'Roboto Condensed', sans-serif; */
 }
 
 .information {
@@ -22,7 +19,7 @@
 
 body {
     background-color: hsl(240, 3%, 83%);
-    background-image: url('../images/pexels-pixabay-417122.jpg');
+    background-image: url('../images/default.jpg');
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -103,12 +100,12 @@ body label, i {
 }
 
 .weather h3{
-    font-size: 20px;
+    font-size: 18px;
 }  
 
 .weather hr{
     padding: 0;
-    margin: 5px;
+    margin: 10px;
     width: 100%;
 }
 
