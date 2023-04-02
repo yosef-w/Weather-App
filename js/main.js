@@ -13,11 +13,19 @@ async function Weather(city){
     console.log(image)
     console.log(responseData);
     console.log(imageData);
+
     document.querySelector('.icon').src = `http://openweathermap.org/img/wn/` + imageData.weather[0].icon + `@2x.png`
-    document.querySelector('.temp').innerHTML = Math.round(responseData.current.temp_f) + `°F`
+
+    document.querySelector('.description').innerHTML = imageData.weather[0].description
+
+    document.querySelector('.temp').innerHTML = Math.round(responseData.current.temp_f) + `°`
+
     document.querySelector('.city').innerHTML = responseData.location.name
+
     document.querySelector('.feels-like').innerHTML = Math.round(responseData.current.feelslike_f) + `°F`
+
     document.querySelector('.wind-speed').innerHTML = responseData.current.wind_mph + `mph`
+
     input.value = '';
 
     if (imageData.weather[0].description == "clear sky") {
@@ -29,4 +37,6 @@ async function Weather(city){
     } else if (imageData.weather[0].description == "broken clouds") {
         document.body.style.backgroundImage = "url('../images/am-broken-clouds.jpg')";
     }
+
+
 }
