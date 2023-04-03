@@ -22,13 +22,18 @@ body {
     background-image: url('../images/default.jpg');
     width: 100%;
     background-size: cover;
-    background-position: center;
+}
+
+.error {
+    margin-top: 20px;
+    font-size: 18px;
+    display: none;
 }
 
 body .card {
     border: none;
     max-width: 500px;
-    background: linear-gradient(to bottom, #0d253f 0%, #4592af 100%);
+    background: linear-gradient(to bottom, #d99abc 0%, #2f3a58 100%);
     margin: 200px auto;
     padding: 50px;
     display: flex;
