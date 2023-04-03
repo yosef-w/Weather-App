@@ -4,13 +4,13 @@ const card = document.querySelector('.card');
 
 search.addEventListener('click', () => {Weather(input.value)});
 
-search.addEventListener('keyup', (event) => {
-    console.log('keyup event triggered');
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        search.click()
-    }
-});
+// search.addEventListener('keyup', (event) => {
+//     console.log('keyup event triggered');
+//     if (event.key === 'Enter') {
+//         event.preventDefault();
+//         search.click()
+//     }
+// });
 
 async function Weather(city) {
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=` + `f6cb7d4eeb654a0aafe203236230103` + `&q=` + `${city}`)
@@ -20,7 +20,9 @@ async function Weather(city) {
     
     if (response.status == 404 || image.status == 404) {
         document.querySelector('.error').style.display = "block";
-        document.querySelector('.information').style.display = "none";
+        document.querySelector('.information').style.display = "none"
+        card.style.background = "";
+        document.body.style.background = "";
     } else {
         document.querySelector('.city').innerHTML = responseData.location.name;
         document.querySelector('.icon').src = `http://openweathermap.org/img/wn/${imageData.weather[0].icon}@2x.png`;
