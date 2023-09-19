@@ -4,13 +4,12 @@ const card = document.querySelector('.card');
 
 search.addEventListener('click', () => {Weather(input.value)});
 
-// search.addEventListener('keyup', (event) => {
-//     console.log('keyup event triggered');
-//     if (event.key === 'Enter') {
-//         event.preventDefault();
-//         search.click()
-//     }
-// });
+input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      Weather(input.value);
+    }
+  });
 
 async function Weather(city) {
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=` + `f6cb7d4eeb654a0aafe203236230103` + `&q=` + `${city}`)
@@ -48,11 +47,11 @@ async function Weather(city) {
             document.body.style.backgroundImage = "url('../images/am-overcast-clouds.jpg')";
         } else if (imageData.weather[0].description == "shower rain") {
             document.body.style.backgroundImage = "url('../images/am-shower-rain.jpg')";
-        } else if (imageData.weather[0].description == "rain") {
+        } else if (imageData.weather[0].description == "rain" || imageData.weather[0].description == "light rain" || imageData.weather[0].description == "moderate rain") {
             document.body.style.backgroundImage = "url('../images/am-rain.jpg')";
         } else if (imageData.weather[0].description == "thunderstorm") {
             document.body.style.backgroundImage = "url('../images/am-thunderstorm.jpg')";
-        } else if (imageData.weather[0].description == "snow") {
+        } else if (imageData.weather[0].description == "snow" || imageData.weather[0].description == "light snow") {
             document.body.style.backgroundImage = "url('../images/am-snow.jpg')";
         } else if (imageData.weather[0].description == "mist") {
             document.body.style.backgroundImage = "url('../images/am-mist.jpg')";
